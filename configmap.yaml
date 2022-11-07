@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+data:
+  BACKEND_URL: https://api.com
+  NUM_WORKERS: "3"
