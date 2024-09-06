@@ -19,6 +19,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: my-service # direct all traffic on specified host to our Service
+                name: <service-name> # direct all traffic on specified host to our Service
                 port:
-                  number: 80
+                  number: <service-port>

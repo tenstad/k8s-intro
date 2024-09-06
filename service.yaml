@@ -5,7 +5,7 @@ metadata:
   name: my-service
 spec:
   selector:
-    app: website # routes traffic to all pods with this label key-value pair
+    <key>: <value> # routes traffic to all pods with this label key-value pair
   ports:
-    - port: 80 # the container listens on port 80
+    - port: <container port> # the container listens on port 80
       protocol: TCP

@@ -18,13 +18,10 @@ spec:
           image: nginx:latest # container image from docker hub
           ports:
             - containerPort: 80 # the container listens on port 80
-          volumeMounts:
-            - name: html-files-volume
-              mountPath: /usr/share/nginx/html # folder to put index.html into
-      volumes:
-        - name: html-files-volume
-          configMap:
-            name: html-files
-            items:
-              - key: index.html
-                path: index.html
+      #     volumeMounts:
+      #       - name: html-files-volume
+      #         mountPath: /usr/share/nginx/html # folder to put index.html into
+      # volumes:
+      #   - name: html-files-volume
+      #     configMap:
+      #       name: <config-map-name>
