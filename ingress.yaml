@@ -2,16 +2,23 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx
+  name: my-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt # auto-request the certificate into the Secret
 spec:
+  ingressClassName: nginx
+  tls:
+    - hosts: # configure which secret contains the certificate for our host
+        - <my-doimain>.k8slight.xyz 
+      secretName: cert
   rules:
-    - host: nginx.local
+    - host: <my-doimain>.k8slight.xyz # domain name of our app (first come first served)
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: nginx
+                name: my-service # direct all traffic on specified host to our Service
                 port:
                   number: 80

@@ -1,7 +1,10 @@
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: config
+  name: html
 data:
-  BACKEND_URL: https://api.com
-  NUM_WORKERS: "3"
+  index.html: | # The main page of our application
+    <body style="background-color: #000">
+     <h1 style="color: #fff; text-align: center">:D</h1>
+    </body>
