@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: website
 spec:
   replicas: 2 # number of identical instances of our application
   selector:
     matchLabels:
-      app: nginx
+      app: website
   template:
     metadata:
       labels:
-        app: nginx # label that Service is targeting
+        app: website # label that Service is targeting
     spec:
       containers:
-        - name: nginx
-          image: nginx:1.14.2 # container image from docker hub
+        - name: website
+          image: nginx:latest # container image from docker hub
           ports:
             - containerPort: 80 # the container listens on port 80
           volumeMounts:
