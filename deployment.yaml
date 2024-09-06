@@ -19,12 +19,12 @@ spec:
           ports:
             - containerPort: 80 # the container listens on port 80
           volumeMounts:
-            - name: html
+            - name: html-files-volume
               mountPath: /usr/share/nginx/html # folder to put index.html into
       volumes:
-        - name: html
+        - name: html-files-volume
           configMap:
-            name: html
+            name: html-files
             items:
               - key: index.html
                 path: index.html
